@@ -1,0 +1,52 @@
+import React from 'react';
+import { View, Text, ScrollView, StyleSheet, StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+const SECTEURS = [
+  {id:1, name:'VTC', icon:'🚗'}, {id:2, name:'Maçon', icon:'🪓'}, {id:3, name:'Livraison', icon:'🚚'}, {id:4, name:'Wallet', icon:'👛'},
+  {id:5, name:'Voyage', icon:'✈️'}, {id:6, name:'Hôtel', icon:'🏨'}, {id:7, name:'Restaurant', icon:'🍴'}, {id:8, name:'Courses', icon:'🛒'},
+  {id:9, name:'Santé', icon:'➕'}, {id:10, name:'Pharmacie', icon:'💊'}, {id:11, name:'École', icon:'🎓'}, {id:12, name:'Formation', icon:'📚'},
+  {id:13, name:'Assurance', icon:'🛡️'}, {id:14, name:'Électricité', icon:'⚡'}, {id:15, name:'Eau', icon:'💧'}, {id:16, name:'Internet', icon:'📶'},
+  {id:17, name:'Téléphonie', icon:'📱'}, {id:18, name:'Recharge', icon:'📞'}, {id:19, name:'Factures', icon:'🧾'}, {id:20, name:'Crypto', icon:'🪙'},
+  {id:21, name:'Immobilier', icon:'🏠'}, {id:22, name:'Artisan', icon:'🛠️'}, {id:23, name:'Nettoyage', icon:'🧹'}, {id:24, name:'Beauté', icon:'✨'},
+  {id:25, name:'Mécanique', icon:'🔧'}, {id:26, name:'Fret', icon:'🧱'}, {id:27, name:'Colis', icon:'📦'}, {id:28, name:'Événement', icon:'📅'},
+  {id:29, name:'Ticket', icon:'🎫'}, {id:30, name:'Don', icon:'❤️'}, {id:31, name:'Épargne', icon:'🐖'}, {id:32, name:'Autres', icon:'▦'},
+];
+
+export default function App(){
+ return(
+  <SafeAreaView style={s.c}>
+   <StatusBar barStyle="light-content"/>
+   <View style={s.h}><Text style={s.ai}>✨👶 Baby AI • En ligne - Comment puis-je vous aider ?</Text></View>
+   <View style={s.w}><Text style={s.wl}>👛 Wallet UEMOA</Text><Text style={s.ws}>152.400 FCFA</Text><Text style={s.wsu}>+2,5% ce mois ≈ 232 USD</Text></View>
+   <Text style={s.t}>32 secteurs • Services</Text>
+   <ScrollView contentContainerStyle={s.g}>
+    {SECTEURS.map(x=><View key={x.id} style={s.card}><Text style={s.i}>{x.icon}</Text><Text style={s.ct}>{x.name}</Text></View>)}
+   </ScrollView>
+   <Text style={s.f}>Baby Market • SDK58 • ARNOLDTIA</Text>
+  </SafeAreaView>
+ )
+}
+const s=StyleSheet.create({
+ c:{flex:1, backgroundColor:'#0A0A0A', padding:10},
+ h:{backgroundColor:'#1A1A1A', borderRadius:20, padding:12, marginBottom:10, borderColor:'#FF6B00', borderWidth:1},
+ ai:{color:'#FF6B00', fontWeight:'bold'},
+ w:{borderColor:'#FF6B00', borderWidth:1, borderRadius:16, padding:14, marginBottom:10},
+ wl:{color:'#fff'}, ws:{color:'#fff', fontSize:32, fontWeight:'bold'}, wsu:{color:'#FF6B00'},
+ t:{color:'#fff', fontWeight:'bold', marginVertical:8},
+ g:{flexDirection:'row', flexWrap:'wrap', justifyContent:'space-between'},
+ card:{width:'23%', backgroundColor:'#1A1A1A', borderRadius:12, padding:12, marginBottom:8, alignItems:'center'},
+ i:{fontSize:22}, ct:{color:'#fff', fontSize:10, marginTop:4},
+ f:{color:'#555', textAlign:'center', fontSize:10}
+});{
+  "expo": {
+    "name": "Baby Market Super App",
+    "slug": "baby-market-super-app",
+    "version": "1.0.0",
+    "android": { "package": "com.babymarket.superapp" }
+  }
+}{
+  "build": {
+    "preview": { "distribution": "internal", "android": { "buildType": "apk" } }
+  }
+}
